@@ -1,0 +1,96 @@
+<!-- crypto_price/templates/coin_graph.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ coin_id|title }} Price Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 p-6">
+    <div class="max-w-6xl mx-auto bg-white shadow-md rounded-lg p-6">
+      <h1 class="text-2xl font-semibold text-center mb-4">
+        {{ coin_id|title }} Price Chart
+      </h1>
+
+      <!-- Timeframe selection -->
+      <div class="mb-4 text-center">
+        <a
+          href="{% url 'coin_graph_timeframe' coin_id=coin_id timeframe='1d' %}"
+          class="px-4 py-2 bg-blue-500 text-white rounded"
+          >1 Day</a
+        >
+        <a
+          href="{% url 'coin_graph_timeframe' coin_id=coin_id timeframe='7d' %}"
+          class="px-4 py-2 bg-blue-500 text-white rounded"
+          >1 Week</a
+        >
+        <a
+          href="{% url 'coin_graph_timeframe' coin_id=coin_id timeframe='30d' %}"
+          class="px-4 py-2 bg-blue-500 text-white rounded"
+          >1 Month</a
+        >
+      </div>
+
+      <div class="mb-6">
+        <canvas id="coinChart"></canvas>
+      </div>
+    </div>
+
+    <script>
+      const ctx = document.getElementById('coinChart').getContext('2d');
+
+      // Debug: Print the values to check if data is passed correctly
+      console.log("Timestamps:", {{ timestamps|safe }});
+      console.log("Prices:", {{ prices|safe }});
+
+      // Ensure timestamps and prices are correctly passed and formatted
+      const timestamps = {{ timestamps|safe }};
+      const prices = {{ prices|safe }};
+
+      // Check if timestamps and prices are populated
+      if (!timestamps.length || !prices.length) {
+          console.log("No data available to plot.");
+      }
+
+      const chartData = {
+          labels: timestamps.map(timestamp => new Date(timestamp)),
+          datasets: [{
+              label: '{{ coin_id|title }} Price (USD)',
+              data: prices,
+              borderColor: 'rgba(75, 192, 192, 1)',
+              backgroundColor: 'rgba(75, 192, 192, 0.2)',
+              fill: true,
+          }]
+      };
+
+      const config = {
+          type: 'line',
+          data: chartData,
+          options: {
+              scales: {
+                  x: {
+                      type: 'time',
+                      time: {
+                          unit: 'minute',
+                      },
+                      title: {
+                          display: true,
+                          text: 'Time'
+                      }
+                  },
+                  y: {
+                      title: {
+                          display: true,
+                          text: 'Price (USD)'
+                      }
+                  }
+              }
+          }
+      };
+
+      const coinChart = new Chart(ctx, config);
+    </script>
+  </body>
+</html>
