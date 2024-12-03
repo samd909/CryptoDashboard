@@ -1,58 +1,45 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %}Crypto-Dashboard{% endblock %}</title>
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/scrollbar.css' %}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{% static 'css/messages.css' %}"
-    />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/scrollbar.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/messages.css' %}" />
 
     <!-- Link Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-  </head>
+</head>
 
-  <body class="bg-gray-100 flex flex-col min-h-screen">
-    <!-- Header with User Name -->
-    <header class="bg-blue-600 text-white py-4 shadow-md">
-      <div class="container mx-auto flex items-center justify-between">
-        <div class="text-2xl font-semibold">
-          Welkom, {{ request.user.username }}
+<body class="text-white h-full overflow-hidden bg-gradient-to-b from-black via-white/20 to-black">
+
+    <!-- Header -->
+    <header class="w-full h-24 bg-transparent fixed top-0 left-0 flex items-center justify-center shadow-lg z-50">
+        <div class="flex space-x-8 h-full w-[25%] opacity-[%] rounded-4xl">
+            <!-- Header content here -->
         </div>
-        <nav>
-          <ul class="flex space-x-6">
-            <li>
-              <a href="/" class="text-white hover:text-blue-300">Home</a>
-            </li>
-            <li>
-              <a href="/logout" class="text-white hover:text-blue-300"
-                >Logout</a
-              >
-            </li>
-          </ul>
-        </nav>
-      </div>
     </header>
 
     <!-- Main Content Area -->
-    <main class="flex-1 container mx-auto py-8">
-      {% block content %}{% endblock %}
+    <main class="mt-24 p-8 text-black h-[calc(100vh-6rem)] overflow-auto pb-24">
+      <div class="bg-transparent h-[100%] w-[100%] opacity-[50%]">
+        {% block content %}
+        <!-- Block content goes here -->
+        {% endblock %}
+      </div>
     </main>
+    
 
-    <!-- Footer -->
-    <footer class="bg-blue-600 text-white py-4 mt-8">
-      <div class="container mx-auto text-center">&copy; 2024 BrawlBots</div>
+    <!-- Footer (fixed to the bottom) -->
+    <footer class="bg-white py-4 text-center text-black fixed bottom-0 left-0 w-full">
+        &copy; 2024 CryptoDashboard
     </footer>
+
+    <!-- Font Awesome Icons (for icons) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <!-- Messages Script (if any) -->
     <script src="{% static 'js/messages.js' %}"></script>
-  </body>
+</body>
 </html>
