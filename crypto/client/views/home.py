@@ -9,7 +9,7 @@ def home(request):
 
     top_coins = get_highest_coins()
     trending_tokens = get_trending_tokens()
-    template = "home.html"
+    template = "home/home.html"
     context = {
         "top_coins": top_coins,
         "trending_tokens": trending_tokens
