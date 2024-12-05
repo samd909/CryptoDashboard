@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Dashboard Background</title>
+    <link rel="stylesheet" href="{% static 'css/background.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/font.css' %}"/>
+    <script src="https://unpkg.com/htmx.org@1.8.1"></script>
+
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="relative h-screen w-screen">
+    <!-- The canvas -->
+    <canvas id="cryptoCanvas" class="absolute top-0 left-0 w-full h-full"></canvas>
+
+    <!-- Blurry div overlay -->
+    <div class="absolute inset-0 flex items-center justify-center">
+        {% block content %}{% endblock %}
+    </div>
+    
+    <script src="{% static 'js/background.js' %}"></script>
+  </body>
+</html>
