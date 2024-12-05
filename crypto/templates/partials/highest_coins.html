@@ -1,0 +1,11 @@
+<h1 class="text-8xl font-bold lovelo-text">Gilde Crypto - Top Coins</h1>
+<div class="flex flex-wrap justify-center gap-6 mt-8">
+    {% for token in top_coins %}
+        <div class="bg-transparent rounded-lg border border-green-800 shadow-lg p-4 w-[20%]">
+            <img src="{{ token.thumb }}" alt="{{ token.name }}" class="w-16 h-16 mx-auto rounded-full">
+            <h2 class="text-xl font-semibold mt-4">{{ token.name }} - ${{ token.price }}</h2>
+            <p class="text-sm ">Symbol: {{ token.symbol }}</p>
+            <p class="text-sm ">Market Cap Rank: {{ token.market_cap_rank }}</p>
+        </div>
+    {% endfor %}
+</div>

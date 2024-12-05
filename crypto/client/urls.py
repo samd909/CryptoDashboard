@@ -14,9 +14,17 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from .views.auth import *
 from .views.home import *
+from .views.dashboard import *
 
 urlpatterns = [
     path('', home, name='home'),
+
+    path('dashboard/', dashboard, name="dashboard"),
+
+
+
+    path('update-trending-tokens/', update_trending_tokens, name='update_trending_tokens'),
+    path('update-highest-coins/', update_highest_coins, name='update_highest_coins'),
     
     path('login/', login_view, name='login'),
     path('register/', register_view, name='register'),
