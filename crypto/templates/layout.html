@@ -7,10 +7,15 @@
     <title>Crypto Dashboard Background</title>
 <<<<<<< Updated upstream
     <link rel="stylesheet" href="{% static 'css/background.css' %}"/>
+<<<<<<< Updated upstream
 =======
     <link rel="stylesheet" href="{% static 'css/background.css' %}" />
     <link rel="stylesheet" href="{% static 'css/font.css' %}" />
 
+>>>>>>> Stashed changes
+=======
+    <link rel="stylesheet" href="{% static 'css/font.css' %}"/>
+    <script src="https://unpkg.com/htmx.org@1.8.1"></script>
 >>>>>>> Stashed changes
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -24,6 +29,7 @@
     <!-- Blurry div overlay -->
     <div class="absolute inset-0 flex items-center justify-center">
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <div class="bg-transparent bg-opacity-30 backdrop-blur-xl rounded-lg w-4/5 h-4/5 flex items-center justify-center">
 =======
       <div
@@ -31,6 +37,44 @@
 >>>>>>> Stashed changes
         <!-- Overlay content -->
       {% block content %}{% endblock %}        
+=======
+      <div class="bg-transparent backdrop-blur-sm rounded-lg w-4/5 h-4/5 flex items-center justify-center">
+
+        <div class="bg-transparent p-2 bg-transparent w-[100%] h-[100%] slide-in" id="trending-div">
+            <div class="bg-transparent w-[100%] h-[10%] flex">
+                <div class="w-[50%]">
+                    <h1 class="text-6xl text-left text-green-600 font-bold lovelo-text">Dashboard</h1>
+                </div>
+                <div class="w-[50%]">
+                    <h1 class="text-6xl text-right text-green-600 font-bold lovelo-text">{{ request.user }}</h1>
+                </div>
+                
+            </div>
+        
+            <div class=" w-[100%] h-[90%] flex">
+                <div class="bg-transparent p-12 w-[15%] h-[100%]">
+                    <ul class="justify-items-center">
+                        <button class="w-[150px] bg-transparent h-[50px] my-3 flex items-center justify-left p-2 rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg border-4 lovelo-text border-transparent hover:border-green-800 text-green-600">
+                            Jou tokens
+                        </button>
+                        <button class="w-[150px] bg-transparent h-[50px] my-3 flex items-center justify-left p-2 rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg border-4 lovelo-text border-transparent hover:border-green-800 text-green-600">
+                            Instellingen
+                        </button>
+                        <button class="w-[150px] bg-transparent h-[50px] my-3 flex items-center justify-left p-2 rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg border-4 lovelo-text border-transparent hover:border-green-800 text-green-600">
+                            Instellingen
+                        </button>
+                        <button class="w-[150px] bg-transparent h-[50px] my-3 flex items-center justify-left p-2 rounded-xl cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg border-4 lovelo-text border-transparent hover:border-green-800 text-green-600">
+                            Instellingen
+                        </button>
+                    </ul>
+                </div>
+        
+                <div class="bg-transparent rounded-lg border border-green-600 mt-4 p-2 h-[100%] w-[85%]">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </div>
+>>>>>>> Stashed changes
       </div>
     </div>
 
