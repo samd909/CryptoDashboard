@@ -3,8 +3,13 @@
 {% load static %}
 
 <div class="bg-transparent p-2 bg-transparent w-[100%] h-[100%] slide-in" id="trending-div">
-    <div class="bg-transparent w-[100%] h-[10%]">
-        <h1 class="text-8xl text-left text-green-600 font-bold lovelo-text">Dashboard</h1>
+    <div class="bg-transparent w-[100%] h-[10%] flex">
+        <div class="w-[50%]">
+            <h1 class="text-6xl text-left text-green-600 font-bold lovelo-text">Dashboard</h1>
+        </div>
+        <div class="w-[50%]">
+            <h1 class="text-6xl text-right text-green-600 font-bold lovelo-text">{{ request.user }}</h1>
+        </div>
         
     </div>
 
