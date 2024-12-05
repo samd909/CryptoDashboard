@@ -5,21 +5,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crypto Dashboard Background</title>
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="{% static 'css/background.css' %}"/>
+=======
+    <link rel="stylesheet" href="{% static 'css/background.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/font.css' %}" />
+
+>>>>>>> Stashed changes
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   </head>
   <body class="relative h-screen w-screen">
     <!-- The canvas -->
-    <canvas id="cryptoCanvas" class="absolute top-0 left-0 w-full h-full"></canvas>
+    <canvas
+      id="cryptoCanvas"
+      class="absolute top-0 left-0 w-full h-full"></canvas>
 
     <!-- Blurry div overlay -->
     <div class="absolute inset-0 flex items-center justify-center">
+<<<<<<< Updated upstream
       <div class="bg-transparent bg-opacity-30 backdrop-blur-xl rounded-lg w-4/5 h-4/5 flex items-center justify-center">
+=======
+      <div
+        class="bg-transparent border border-green-800 backdrop-blur-sm rounded-lg w-4/5 h-4/5 flex items-center justify-center">
+>>>>>>> Stashed changes
         <!-- Overlay content -->
       {% block content %}{% endblock %}        
       </div>
     </div>
-    
+
     <script src="{% static 'js/background.js' %}"></script>
   </body>
 </html>
