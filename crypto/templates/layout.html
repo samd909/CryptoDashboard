@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crypto Dashboard Background</title>
     <link rel="stylesheet" href="{% static 'css/background.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/font.css' %}"/>
+
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="relative h-screen w-screen">
@@ -14,10 +16,11 @@
 
     <!-- Blurry div overlay -->
     <div class="absolute inset-0 flex items-center justify-center">
-      <div class="bg-transparent bg-opacity-30 backdrop-blur-xl rounded-lg w-4/5 h-4/5 flex items-center justify-center">
+      <div class="bg-transparent border border-green-800 backdrop-blur-sm rounded-lg w-4/5 h-4/5 flex items-center justify-center">
         <!-- Overlay content -->
-      {% block content %}{% endblock %}        
+        {% block content %}{% endblock %}
       </div>
+      
     </div>
     
     <script src="{% static 'js/background.js' %}"></script>

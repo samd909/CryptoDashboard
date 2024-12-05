@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Lovelo';
+    src: url('lovelo.otf') format('truetype');
+}
+.lovelo-text {
+    font-family: 'Lovelo', sans-serif; /* Fallback to sans-serif if Lovelo isn't available */
+}
