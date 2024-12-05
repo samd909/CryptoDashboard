@@ -4,3 +4,4 @@ crypto/client/pycache/urls.cpython-312.pyc
 crypto/client/views/pycache/dashboard.cpython-312.pyc
 crypto/client/views/pycache/auth.cpython-312.pyc
 crypto/client/views/pycache/home.cpython-312.pyc
+*.pyc
